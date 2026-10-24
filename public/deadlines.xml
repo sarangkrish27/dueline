@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Edit this file, commit, push. Vercel redeploys and the site updates.
+  One <deadline> per line of work.
+    date  : YYYY-MM-DD (IST)
+    time  : HH:MM, 24-hour (IST). Optional, defaults to 23:59
+    kind  : assignment | project
+    title : what it is
+    part  : which questions / phase (optional)
+  These entries are SAMPLES. Replace them with the real dates.
+-->
+<deadlines>
+  <deadline date="2026-10-25" time="23:59" kind="assignment" title="GA3" part="Questions 1–6" />
+  <deadline date="2026-11-11" time="5:30" kind="project" title="Project 1" part="Question 1" />
+  <deadline date="2026-10-26" time="23:59" kind="project" title="Project 1" part="Question 3" />
+  <deadline date="2026-10-31" time="23:59" kind="project" title="Project 1" part="Questions 6 | Trading window" />
+  <deadline date="2026-11-2" time="23:59" kind="project" title="Project 1" part="Questions 6 | Confirmation window" />
+  <deadline date="2026-10-29" time="11:59" kind="project" title="Project 1" part="Questions 7 | Creation Part" />
+  <deadline date="2026-11-1" time="11:59" kind="project" title="Project 1" part="Questions 7 | Narration and Ranking Part" />
+</deadlines>
