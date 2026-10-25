@@ -4,6 +4,8 @@
   --muted: #6e6a62;
   --rule: #e6e2d8;
   --accent: #a63d2a;
+  --tag-assignment: #1f6f63;
+  --tag-project: #6a4a9c;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   color-scheme: light;
@@ -15,6 +17,8 @@
     --muted: #9b968b;
     --rule: #2e2c27;
     --accent: #e48a73;
+    --tag-assignment: #6cc4b2;
+    --tag-project: #b9a2ea;
     color-scheme: dark;
   }
 }
@@ -24,6 +28,8 @@
   --muted: #9b968b;
   --rule: #2e2c27;
   --accent: #e48a73;
+  --tag-assignment: #6cc4b2;
+  --tag-project: #b9a2ea;
   color-scheme: dark;
 }
 
@@ -136,13 +142,20 @@ ul.items { list-style: none; margin: 0; padding: 0; }
 .items .title { font-weight: 600; }
 .items .part { color: var(--muted); }
 .items .kind {
-  display: block;
+  --tag: var(--muted);
+  display: table;
+  margin-bottom: 0.2rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 3px;
   font-family: var(--sans);
   font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--tag);
+  background: color-mix(in srgb, var(--tag) 14%, transparent);
 }
+.items .kind-assignment { --tag: var(--tag-assignment); }
+.items .kind-project { --tag: var(--tag-project); }
 .items time {
   font-family: var(--sans);
   font-size: 0.8125rem;
@@ -173,3 +186,6 @@ footer {
   color: var(--muted);
 }
 footer code { font-size: 0.95em; }
+
+.items a.title { text-decoration: none; }
+.items a.title:hover { text-decoration: underline; text-decoration-color: var(--muted); text-underline-offset: 0.2em; }

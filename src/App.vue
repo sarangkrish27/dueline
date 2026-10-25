@@ -141,7 +141,7 @@ function toggleTheme() {
           <ul class="items">
             <li v-for="(r, i) in day.rows" :key="i">
               <span class="what">
-                <span class="kind">{{ KINDS[r.kind] || r.kind }}</span>
+                <span class="kind" :class="'kind-' + r.kind">{{ KINDS[r.kind] || r.kind }}</span>
                 <span class="title">{{ r.title }}</span>
                 <span v-if="r.part" class="part"> · {{ r.part }}</span>
               </span>
