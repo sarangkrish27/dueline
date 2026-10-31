@@ -178,9 +178,10 @@ function toggleTheme() {
       </template>
     </main>
 
-    <footer>
-  This is not an official IIT Madras or TDS website. Always confirm deadlines on the course pages.<br />
-  If you found any error, send a gchat at 24f2005600@ds.study.iitm.ac.in
-</footer>
+            <footer>
+      <p class="made">Made by <a href="https://hi-sarang.vercel.app/" target="_blank" rel="noopener">Sarang</a></p>
+      <p>This is not an official IIT Madras or TDS website. Always confirm deadlines on the course pages.</p>
+      <p>Found an error? Send a gchat to 24f2005600@ds.study.iitm.ac.in</p>
+    </footer>
   </div>
 </template>

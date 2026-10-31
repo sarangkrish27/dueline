@@ -179,13 +179,20 @@ details .day:first-of-type { margin-top: 0.5rem; }
 
 footer {
   margin-top: 5rem;
-  padding-top: 1.25rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--muted);
 }
-footer code { font-size: 0.95em; }
+footer p { margin: 0 0 0.5rem; }
+footer .made {
+  margin-bottom: 0.75rem;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  color: var(--fg);
+}
+footer .made a { text-decoration-color: var(--accent); color: var(--accent);}
 
 .items a.title { text-decoration: none; }
 .items a.title:hover { text-decoration: underline; text-decoration-color: var(--muted); text-underline-offset: 0.2em; }
