@@ -76,7 +76,14 @@ function group(list) {
 
 const upcoming = computed(() => group(items.value.filter((d) => d.due >= now.value)))
 const past = computed(() => group(items.value.filter((d) => d.due < now.value)).reverse())
-const next = computed(() => items.value.find((d) => d.due >= now.value))
+
+// All deadlines that close at the next closing time (can be more than one).
+const nextItems = computed(() => {
+  const first = items.value.find((d) => d.due >= now.value)
+  return first ? items.value.filter((d) => +d.due === +first.due) : []
+})
+const next = computed(() => nextItems.value[0])
+const label = (d) => `${d.title}${d.part ? ' · ' + d.part : ''}`
 
 function rel(diff) {
   if (diff === 0) return 'Today'
@@ -93,7 +100,6 @@ function left(d) {
   if (mins < 1440) return `${Math.floor(mins / 60)} h ${mins % 60} min left`
   return `${rel(dayDiff(d.date)).toLowerCase()}, ${clock(d)}`
 }
-const nextText = computed(() => (next.value ? `${next.value.title}${next.value.part ? ' · ' + next.value.part : ''}` : ''))
 
 const theme = ref(document.documentElement.dataset.theme || '')
 function toggleTheme() {
@@ -124,10 +130,10 @@ function toggleTheme() {
 
       <section v-if="next" class="next" aria-label="Next deadline">
         <div class="label">Next up</div>
-        <p>
-          {{ nextText }}<br />
-          <span class="when">{{ left(next) }}</span>
+                <p v-for="(d, i) in nextItems" :key="i">
+          <span class="next-title" :class="'kind-' + d.kind">{{ d.title }}</span>{{ d.part ? ' · ' + d.part : '' }}
         </p>
+        <p class="when">{{ left(next) }}</p>
       </section>
 
       <template v-if="loaded && !error">

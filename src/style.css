@@ -189,3 +189,7 @@ footer code { font-size: 0.95em; }
 
 .items a.title { text-decoration: none; }
 .items a.title:hover { text-decoration: underline; text-decoration-color: var(--muted); text-underline-offset: 0.2em; }
+
+.next .next-title { font-weight: 600; }
+.next .kind-assignment { color: var(--tag-assignment); }
+.next .kind-project { color: var(--tag-project); }
