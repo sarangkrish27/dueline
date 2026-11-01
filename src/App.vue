@@ -80,7 +80,7 @@ const past = computed(() => group(items.value.filter((d) => d.due < now.value)).
 // All deadlines that close at the next closing time (can be more than one).
 const nextItems = computed(() => {
   const first = items.value.find((d) => d.due >= now.value)
-  return first ? items.value.filter((d) => +d.due === +first.due) : []
+  return first ? items.value.filter((d) => d.due >= now.value && d.date === first.date) : []
 })
 const next = computed(() => nextItems.value[0])
 const label = (d) => `${d.title}${d.part ? ' · ' + d.part : ''}`
@@ -130,10 +130,10 @@ function toggleTheme() {
 
       <section v-if="next" class="next" aria-label="Next deadline">
         <div class="label">Next up</div>
-                <p v-for="(d, i) in nextItems" :key="i">
-          <span class="next-title" :class="'kind-' + d.kind">{{ d.title }}</span>{{ d.part ? ' · ' + d.part : '' }}
+        <p v-for="(d, i) in nextItems" :key="i">
+          <span class="next-title" :class="'kind-' + d.kind">{{ d.title }}</span>{{ d.part ? ' · ' + d.part : '' }}<br />
+          <span class="when">{{ left(d) }}</span>
         </p>
-        <p class="when">{{ left(next) }}</p>
       </section>
 
       <template v-if="loaded && !error">
