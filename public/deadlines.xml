@@ -18,7 +18,15 @@
   <deadline date="2026-11-2" time="23:59" kind="project" title="Project 1" part="Questions 6 | Confirmation window" />
   <deadline date="2026-10-29" time="11:59" kind="project" title="Project 1" part="Questions 7 | Creation Part" />
   <deadline date="2026-11-1" time="11:59" kind="project" title="Project 1" part="Questions 7 | Narration and Ranking Part" />
-  <deadline date="2026-11-11" time="21:00" kind="assignment" title="GA4" part="Question 2 | 10 November at 6:00 pm or 11 November at 7:30 am or 11 November at 9:00 pm" />
+  
+  <deadline date="2026-11-10" time="18:00" kind="assignment" title="GA4" part="Question 2 | Session 1" />
+  <deadline date="2026-11-11" time="7:30" kind="assignment" title="GA4" part="Question 2 | Session 2" />
+  <deadline date="2026-11-11" time="21:00" kind="assignment" title="GA4" part="Question 2 | Session 3" />
+
+  <deadline date="2026-11-12" time="21:00" kind="assignment" title="GA4" part="Question 3 | Session 1" />
+  <deadline date="2026-11-13" time="18:00" kind="assignment" title="GA4" part="Question 3 | Session 2" />
+  <deadline date="2026-11-14" time="8:00" kind="assignment" title="GA4" part="Question 3 | Session 3" />
+  
   <deadline date="2026-11-11" time="23:59" kind="assignment" title="GA4" part="Overall deadline" />
   <deadline date="2026-11-17" time="23:59" kind="project" title="Project 1" part="Overall deadline" />
 </deadlines>
